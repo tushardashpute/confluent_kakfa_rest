@@ -12,6 +12,7 @@ Steps
 
   a. Start Zookeper
   b. start kafka server
+
 4. CREATE A TOPIC TO STORE YOUR EVENTS
 5. WRITE SOME EVENTS INTO THE TOPIC
 6. READ THE EVENTS
