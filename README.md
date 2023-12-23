@@ -5,8 +5,10 @@ Steps
 1. Install Java 8 or above
 2. START THE KAFKA ENVIRONMENT
 
-[Download](https://dlcdn.apache.org/kafka/) the latest Kafka release and extract it: 
+ [Download](https://dlcdn.apache.org/kafka/) the latest Kafka release and extract it: 
 
+      $ tar -xzf kafka_2.13-3.6.1.tgz
+      $ cd kafka_2.13-3.6.1
 
   a. Start Zookeper
   b. start kafka server
