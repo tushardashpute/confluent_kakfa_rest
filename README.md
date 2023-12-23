@@ -21,9 +21,8 @@ Add server.0 configuration in config/zookeper.properties. Replace the below DNS 
    ====================
        server.0=ec2-3-133-7-49.us-east-2.compute.amazonaws.com:2888:3888
 
-   # Start the ZooKeeper service
-   
-      $ bin/zookeeper-server-start.sh config/zookeeper.properties
+      # Start the ZooKeeper service
+      bin/zookeeper-server-start.sh config/zookeeper.properties
    
    b. start kafka server
 
@@ -33,6 +32,8 @@ Add server.0 configuration in config/zookeper.properties. Replace the below DNS 
    advertised.listeners=PLAINTEXT://ec2-3-133-7-49.us-east-2.compute.amazonaws.com:9092
    zookeeper.connect=ec2-3-133-7-49.us-east-2.compute.amazonaws.com:2181
 
+     # Start the Kafka broker service
+     bin/kafka-server-start.sh config/server.properties
 
 **3. CREATE A TOPIC TO STORE YOUR EVENTS**
 **4. WRITE SOME EVENTS INTO THE TOPIC**
