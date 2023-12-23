@@ -13,24 +13,22 @@ https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/amazon-linux-install.
       $ tar -xzf kafka_2.13-3.6.1.tgz
       $ cd kafka_2.13-3.6.1
 
-   **a. Start Zookeper**
+ **a. Start Zookeper**
 
 Add server.0 configuration in config/zookeper.properties. Replace the below DNS with your ec2 public dns.
 
-   zookeeper.properties
-   ====================
-        server.0=ec2-3-133-7-49.us-east-2.compute.amazonaws.com:2888:3888
+     # zookeeper.properties
+     server.0=ec2-3-133-7-49.us-east-2.compute.amazonaws.com:2888:3888
 
       # Start the ZooKeeper service
       bin/zookeeper-server-start.sh config/zookeeper.properties
    
    **b. start kafka server**
 
-   server.properties
-   =================
-     listeners = PLAINTEXT://ec2-3-133-7-49.us-east-2.compute.amazonaws.com:9092
-     advertised.listeners=PLAINTEXT://ec2-3-133-7-49.us-east-2.compute.amazonaws.com:9092
-     zookeeper.connect=ec2-3-133-7-49.us-east-2.compute.amazonaws.com:2181
+      # server.properties
+      listeners = PLAINTEXT://ec2-3-133-7-49.us-east-2.compute.amazonaws.com:9092
+      advertised.listeners=PLAINTEXT://ec2-3-133-7-49.us-east-2.compute.amazonaws.com:9092
+      zookeeper.connect=ec2-3-133-7-49.us-east-2.compute.amazonaws.com:2181
 
      # Start the Kafka broker service
      bin/kafka-server-start.sh config/server.properties
