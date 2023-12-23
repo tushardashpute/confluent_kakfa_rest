@@ -15,6 +15,6 @@ Steps
         for that you need to install either confluent Kafka or on top of existing kafka you can install Confluent Rest.
 
 
-steps:
-======
+Steps to add confluent kafka rest:
+===================================
 1. Download Confluent Kafka and start it
