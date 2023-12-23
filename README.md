@@ -45,8 +45,11 @@ Kafka is a distributed event streaming platform that lets you read, write, store
 
 **4. WRITE SOME EVENTS INTO THE TOPIC**
 
+    $ bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server 3.133.7.49:9092
+
 **5. READ THE EVENTS**
 
+    $ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server 3.133.7.49:9092
 
         # Now if you want to send data to kafka topics using curl/postman you can do it with Apache Kafka,
         for that you need to install either confluent Kafka or on top of existing kafka you can install Confluent Rest.
