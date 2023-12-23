@@ -35,6 +35,14 @@ Add server.0 configuration in config/zookeper.properties. Replace the below DNS 
 
 **3. CREATE A TOPIC TO STORE YOUR EVENTS**
 
+Kafka is a distributed event streaming platform that lets you read, write, store, and process events (also called records or messages in the documentation) across many machines.
+
+    #Create a new topic
+    $ bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server 3.133.7.49:9092
+
+    #Describe the topic which you created
+    $ bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server 3.133.7.49:9092
+
 **4. WRITE SOME EVENTS INTO THE TOPIC**
 
 **5. READ THE EVENTS**
