@@ -2,20 +2,41 @@
 
 Steps
 =====
-1. Install Java 8 or above
-2. START THE KAFKA ENVIRONMENT
+**1. Install Java 8 or above**
+
+https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/amazon-linux-install.html
+
+**2. START THE KAFKA ENVIRONMENT**
 
  [Download](https://dlcdn.apache.org/kafka/) the latest Kafka release and extract it: 
 
       $ tar -xzf kafka_2.13-3.6.1.tgz
       $ cd kafka_2.13-3.6.1
 
-  a. Start Zookeper
-  b. start kafka server
+   a. Start Zookeper
 
-4. CREATE A TOPIC TO STORE YOUR EVENTS
-5. WRITE SOME EVENTS INTO THE TOPIC
-6. READ THE EVENTS
+Add server.0 configuration in config/zookeper.properties. Replace the below DNS with your ec2 public dns.
+
+   zookeeper.properties
+   ====================
+       server.0=ec2-3-133-7-49.us-east-2.compute.amazonaws.com:2888:3888
+
+   # Start the ZooKeeper service
+   
+      $ bin/zookeeper-server-start.sh config/zookeeper.properties
+   
+   b. start kafka server
+
+   server.properties
+   =================
+   listeners = PLAINTEXT://ec2-3-133-7-49.us-east-2.compute.amazonaws.com:9092
+   advertised.listeners=PLAINTEXT://ec2-3-133-7-49.us-east-2.compute.amazonaws.com:9092
+   zookeeper.connect=ec2-3-133-7-49.us-east-2.compute.amazonaws.com:2181
+
+
+**3. CREATE A TOPIC TO STORE YOUR EVENTS**
+**4. WRITE SOME EVENTS INTO THE TOPIC**
+**5. READ THE EVENTS**
 
 
         # Now if you want to send data to kafka topics using curl/postman you can do it with Apache Kafka,
