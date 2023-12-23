@@ -4,11 +4,15 @@ Steps
 =====
 1. Install Java 8 or above
 2. START THE KAFKA ENVIRONMENT
+
+Download([https://kafka.apache.org/quickstart](https://www.apache.org/dyn/closer.cgi?path=/kafka/3.6.1/kafka_2.13-3.6.1.tgz)) the latest Kafka release and extract it: 
+
+
   a. Start Zookeper
   b. start kafka server
-3. CREATE A TOPIC TO STORE YOUR EVENTS
-4. WRITE SOME EVENTS INTO THE TOPIC
-5. READ THE EVENTS
+4. CREATE A TOPIC TO STORE YOUR EVENTS
+5. WRITE SOME EVENTS INTO THE TOPIC
+6. READ THE EVENTS
 
 
         # Now if you want to send data to kafka topics using curl/postman you can do it with Apache Kafka,
