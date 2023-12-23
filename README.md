@@ -11,7 +11,8 @@ Steps
 5. READ THE EVENTS
 
 
-        # Now if you want to send data to kafka topics using curl/postman you can do it with Apache Kafka, for that you need to install either confluent Kafka or on top of existing kafka you can install Confluent Rest.
+        # Now if you want to send data to kafka topics using curl/postman you can do it with Apache Kafka,
+        for that you need to install either confluent Kafka or on top of existing kafka you can install Confluent Rest.
 
 
 steps:
