@@ -59,3 +59,12 @@ Kafka is a distributed event streaming platform that lets you read, write, store
 Steps to add confluent kafka rest:
 ===================================
 1. Download Confluent Kafka and start it
+
+2. /home/ec2-user/confluent-7.5.2/bin/kafka-rest-start /home/ec2-user/confluent-7.5.2/etc/kafka-rest/kafka-rest.properties 
+
+
+id=kafka-rest-test-server
+listeners=http://0.0.0.0:8082
+#schema.registry.url=http://localhost:8081
+#zookeeper.connect=localhost:2181
+bootstrap.servers=PLAINTEXT://ec2-3-133-7-49.us-east-2.compute.amazonaws.com:9092
