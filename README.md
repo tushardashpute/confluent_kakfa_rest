@@ -78,17 +78,17 @@ API gayeway --> Create API --> Rest API --> Build
 
 Create Resource
 
-![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/3900073e-b71d-422b-a914-b6d7bf35ddef)
+![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/cacec871-ac72-4860-9e15-1fbce2029ff7)
 
 create method
 
-in the Endpoint URL specify the complete URL path of kafka rest : http://ec2-3-144-225-186.us-east-2.compute.amazonaws.com:8082/topics/quickstart-events
+in the Endpoint URL specify the complete URL path of kafka rest : http://ec2-3-144-225-186.us-east-2.compute.amazonaws.com:8082/topics/{proxy}
 
-![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/50e70269-b568-4310-a154-e92791facd7f)
+![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/f92b4c67-6c33-4e71-9655-dc2823f577c3)
 
 Click on create method.
 
-![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/8ca6a81c-56b8-429a-957e-d2d047cc7edc)
+![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/0376a665-0476-4f43-b5f2-36218e92bff1)
 
 Now click on Deploy API
 
@@ -98,13 +98,13 @@ now copy the invoke URL of API and POST the data to Kakfa using postman.
 
 **Set the 'Content-Type: application/vnd.kafka.json.v2+json' in the headers.**
 
-![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/4d6f8b6b-20a6-4338-9834-ca9604776634)
+![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/1c62bcb3-561a-4ff1-b1cd-c0a839952fb4)
 
-![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/4b32a025-6894-4224-bece-c93cdbb99bac)
+![Uploading image.png…]()
 
 If you want you can post the message to Kafka using curl command also:
 
-    curl --location 'https://04h3mvmpae.execute-api.us-east-2.amazonaws.com/dev/kafka' \
+    curl --location 'https://y8nvflwi5f.execute-api.us-east-2.amazonaws.com/dev/quickstart-events' \
     --header 'Content-Type: application/vnd.kafka.json.v2+json' \
     --data '{
         "records": [
