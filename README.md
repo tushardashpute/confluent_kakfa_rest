@@ -58,13 +58,69 @@ Kafka is a distributed event streaming platform that lets you read, write, store
 
 Steps to add confluent kafka rest:
 ===================================
-1. Download Confluent Kafka and start it
+1. [Download]{https://docs.confluent.io/platform/current/installation/installing_cp/zip-tar.html} Confluent Kafka and start it
 
 2. /home/ec2-user/confluent-7.5.2/bin/kafka-rest-start /home/ec2-user/confluent-7.5.2/etc/kafka-rest/kafka-rest.properties 
 
+Update the kafka-rest.properties with below settings:
 
-id=kafka-rest-test-server
-listeners=http://0.0.0.0:8082
-#schema.registry.url=http://localhost:8081
-#zookeeper.connect=localhost:2181
-bootstrap.servers=PLAINTEXT://ec2-3-133-7-49.us-east-2.compute.amazonaws.com:9092
+   id=kafka-rest-test-server
+   listeners=http://0.0.0.0:8082
+   bootstrap.servers=PLAINTEXT://ec2-3-133-7-49.us-east-2.compute.amazonaws.com:9092
+
+Create API Gateway to send Kakfa messages
+========================================
+1. Create a API Gateway
+
+API gayeway --> Create API --> Rest API --> Build
+
+![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/19fbcc4d-6d8e-4404-93d1-784dbf5c28c8)
+
+Create Resource
+
+![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/3900073e-b71d-422b-a914-b6d7bf35ddef)
+
+create method
+
+in the Endpoint URL specify the complete URL path of kafka rest : http://ec2-3-144-225-186.us-east-2.compute.amazonaws.com:8082/topics/quickstart-events
+
+![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/50e70269-b568-4310-a154-e92791facd7f)
+
+Click on create method.
+
+![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/8ca6a81c-56b8-429a-957e-d2d047cc7edc)
+
+Now click on Deploy API
+
+![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/969f086c-e316-4313-8a6c-38a5243418f6)
+
+now copy the invoke URL of API and POST the data to Kakfa using postman. 
+
+**Set the 'Content-Type: application/vnd.kafka.json.v2+json' in the headers.**
+
+![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/4d6f8b6b-20a6-4338-9834-ca9604776634)
+
+![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/4b32a025-6894-4224-bece-c93cdbb99bac)
+
+If you want you can post the message to Kafka using curl command also:
+
+    curl --location 'https://04h3mvmpae.execute-api.us-east-2.amazonaws.com/dev/kafka' \
+    --header 'Content-Type: application/vnd.kafka.json.v2+json' \
+    --data '{
+        "records": [
+            {
+                "value": {
+                    "deviceid": "AppleWatch4",
+                    "heartrate": "72",
+                    "timestamp": "2019-10-07 12:46:13"
+                }
+            }
+        ]
+    }'
+
+I have Kept KAFKA consumer open in another terminal, that we can verify message received at consumer end or not:
+
+![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/5ed30d3b-f2ed-428b-ac9c-ec06f97fadd5)
+
+
+
