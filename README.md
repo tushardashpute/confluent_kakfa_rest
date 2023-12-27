@@ -64,9 +64,9 @@ Steps to add confluent kafka rest:
 
 Update the kafka-rest.properties with below settings:
 
-   id=kafka-rest-test-server
-   listeners=http://0.0.0.0:8082
-   bootstrap.servers=PLAINTEXT://ec2-3-133-7-49.us-east-2.compute.amazonaws.com:9092
+     id=kafka-rest-test-server
+     listeners=http://0.0.0.0:8082
+     bootstrap.servers=PLAINTEXT://ec2-3-133-7-49.us-east-2.compute.amazonaws.com:9092
 
 Create API Gateway to send Kakfa messages
 ========================================
