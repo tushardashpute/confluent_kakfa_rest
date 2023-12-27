@@ -123,4 +123,9 @@ I have Kept KAFKA consumer open in another terminal, that we can verify message 
 ![image](https://github.com/tushardashpute/confluent_kakfa_rest/assets/74225291/5ed30d3b-f2ed-428b-ac9c-ec06f97fadd5)
 
 
+References:
+=
+https://aws.amazon.com/blogs/big-data/govern-how-your-clients-interact-with-apache-kafka-using-api-gateway/
+https://kafka.apache.org/quickstart
+
 
